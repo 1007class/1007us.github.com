@@ -1,0 +1,766 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="小米路由,Pandorabox," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="因为是刷机后的教程，所以就不给图了，所有的步骤比较清晰，而且都是我确保所有没问题的方法SN 会丢失么？ 实测3~4遍，反正我到现在没丢失过，刷回官方的，SN就有小米路由MINI（下称mini）买来刚开始用着挺爽的，日久天长，发现了对方的毛病，经常抽风（打开网页失败）。憋不住了，刷第三方的固件 – Pandorabox（潘多拉）。选择Pandorabox 因为可定制性高些，有opkg，可以做些一般">
+<meta name="keywords" content="小米路由,Pandorabox">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小米路由MINI刷Pandorabox教程">
+<meta property="og:url" content="http:&#x2F;&#x2F;1007class.github.io&#x2F;2016&#x2F;11&#x2F;06&#x2F;sunhao&#x2F;23&#x2F;index.html">
+<meta property="og:site_name" content="1007 我们一起">
+<meta property="og:description" content="因为是刷机后的教程，所以就不给图了，所有的步骤比较清晰，而且都是我确保所有没问题的方法SN 会丢失么？ 实测3~4遍，反正我到现在没丢失过，刷回官方的，SN就有小米路由MINI（下称mini）买来刚开始用着挺爽的，日久天长，发现了对方的毛病，经常抽风（打开网页失败）。憋不住了，刷第三方的固件 – Pandorabox（潘多拉）。选择Pandorabox 因为可定制性高些，有opkg，可以做些一般">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2016-11-07T14:51:34.000Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://1007class.github.io/2016/11/06/sunhao/23/"/>
+
+
+
+
+
+  <title>小米路由MINI刷Pandorabox教程 | 1007 我们一起</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">1007 我们一起</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            Photo
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://1007class.github.io/2016/11/06/sunhao/23/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="1007">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://imeitu.qiniudn.com/avatar.jpg?imageView2/2/h/200">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="1007 我们一起">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">小米路由MINI刷Pandorabox教程</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-06T22:02:36+08:00">
+                2016-11-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/openwrt/" itemprop="url" rel="index">
+                    <span itemprop="name">openwrt</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>因为是刷机后的教程，所以就不给图了，所有的步骤比较清晰，而且都是我确保所有没问题的方法<br>SN 会丢失么？ 实测3~4遍，反正我到现在没丢失过，刷回官方的，SN就有<br>小米路由MINI（下称mini）买来刚开始用着挺爽的，日久天长，发现了对方的毛病，经常抽风（打开网页失败）。憋不住了，刷第三方的固件 – Pandorabox（潘多拉）。<br>选择Pandorabox 因为可定制性高些，有opkg，可以做些一般人不能做的事情😄。<br>写这篇文章的目的，记录下自己遇到的坑，对其他的文章做一补充。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="Step1-小米路由MINI开发版-开启SSH"><a href="#Step1-小米路由MINI开发版-开启SSH" class="headerlink" title="Step1 小米路由MINI开发版/开启SSH"></a>Step1 小米路由MINI开发版/开启SSH</h2><p>首先确保路由器固件当前版本是<code>开发版</code>，因为只有<code>开发版</code>才能开启<a href="http://baike.baidu.com/link?url=UHhLhN1mYFrUf665Rd20VK_XlGeiqFWmdsJ097TRgtIanMXlNYWtm5cMZOsPElDLgeun5zqTG5UrJRhmG13Hm_" target="_blank" rel="noopener">SSH</a> 进行后续操作。  具体教程网上很多，不一一介绍，没坑，<a href="http://bbs.xiaomi.cn/t-11720354" target="_blank" rel="noopener">官网教程</a>  </p>
+<p><strong>请删除刚刚的miwifi.bin文件！</strong>为啥呢，因为你会发现下面这个教程也很类似，不知道会不会有冲突，所以还是删了好  </p>
+<p>接着就是开启SSH了，仍然是<a href="https://d.miwifi.com/rom/ssh?userId=251585770" target="_blank" rel="noopener">官网教程</a>(需要绑定路由器的小米账号)，记得记下ROOT密码（不会变的，后面再来看也行）。</p>
+<blockquote>
+<p>其实，这两步可以一步完成，步骤就是分别把两文件一起放到U盘里面，刷机就行，但这个是我意外发现，不敢乱指挥啊，有胆量的哥们可以试试。</p>
+</blockquote>
+<h2 id="Step2-选择下载Pandorabox固件"><a href="#Step2-选择下载Pandorabox固件" class="headerlink" title="Step2 选择下载Pandorabox固件"></a>Step2 选择下载Pandorabox固件</h2><p>我不是坑，我给<a href="http://downloads.openwrt.org.cn/PandoraBox/Xiaomi-Mini-R1CM/" target="_blank" rel="noopener">官方下载<strong>详细的</strong>地址</a>，为啥说是详细的呢，有些教程坑，扔出一个官网地址，让你自己选择去，鬼晓得选择啥平台。<br>版本选择：old_fw（旧的版本），stable（稳定版），testing（测试），u-boot（不知道😂）。<br>选的当然是stable最新版了，<a href="http://downloads.openwrt.org.cn/PandoraBox/Xiaomi-Mini-R1CM/stable/PandoraBox-ralink-mt7620-xiaomi-mini-squashfs-sysupgrade-r1024-20150608.bin" target="_blank" rel="noopener">传送门</a></p>
+<h2 id="Step3-安装Pandorabox固件"><a href="#Step3-安装Pandorabox固件" class="headerlink" title="Step3 安装Pandorabox固件"></a>Step3 安装Pandorabox固件</h2><p>这里，固件安装方法最多，我只给出我使用的方法（防止其他的方法有坑，锅我不背）。<br><strong>下面这步教程只接受Windows系统，mac，Linux，请绕道使用SSH安装</strong><br>下载个newifi 工具，<a href="http://www.newifi.com/router.shtml" target="_blank" rel="noopener">传送门</a>，路由助手下载。（newifi是什么鬼❓想知道就百度吧，第三方做路由的）  </p>
+<p>下载安装完成打开软件后，“实用工具” =&gt; “小米mini刷机工具” ，然后按照说明一步步来即可。<strong>第3步让你下载newifi固件，你别那么实诚，真去下载了！</strong>只需把刚刚下载的Pandorabox固件重命名为newifi.bin 拷入进去就行。记得把miwifi_ssh.bin文件删除掉!</p>
+<h2 id="Step4-成功了，可以耍了。"><a href="#Step4-成功了，可以耍了。" class="headerlink" title="Step4 成功了，可以耍了。"></a>Step4 成功了，可以耍了。</h2><p>连接WiFi - Pandorabox_xxx =&gt; 浏览器输入192.168.1.1 账户/密码 root/admin<br>尽情的耍吧。</p>
+<hr>
+<p>后面会继续讲如何跟openwrt 一起愉快的玩耍，比如路由器当成小服务器😂（屌丝气质）</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      1007
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://1007class.github.io/2016/11/06/sunhao/23/" title="小米路由MINI刷Pandorabox教程">http://1007class.github.io/2016/11/06/sunhao/23/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/%E5%B0%8F%E7%B1%B3%E8%B7%AF%E7%94%B1/" rel="tag"># 小米路由</a>
+          
+            <a href="/tags/Pandorabox/" rel="tag"># Pandorabox</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/25/sunhao/22/" rel="next" title="android Android_ADB_通过WIFI或USB方式完成调试">
+                <i class="fa fa-chevron-left"></i> android Android_ADB_通过WIFI或USB方式完成调试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/20/sunhao/24/" rel="prev" title="树莓派 FAT32格式的U盘更改属性或者组提示没有权限">
+                树莓派 FAT32格式的U盘更改属性或者组提示没有权限 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://imeitu.qiniudn.com/avatar.jpg?imageView2/2/h/200"
+               alt="1007" />
+          <p class="site-author-name" itemprop="name">1007</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step1-小米路由MINI开发版-开启SSH"><span class="nav-number">1.</span> <span class="nav-text">Step1 小米路由MINI开发版/开启SSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step2-选择下载Pandorabox固件"><span class="nav-number">2.</span> <span class="nav-text">Step2 选择下载Pandorabox固件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step3-安装Pandorabox固件"><span class="nav-number">3.</span> <span class="nav-text">Step3 安装Pandorabox固件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step4-成功了，可以耍了。"><span class="nav-number">4.</span> <span class="nav-text">Step4 成功了，可以耍了。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">1007</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="noopener">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+
+</body>
+</html>
