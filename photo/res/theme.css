@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.content-wrap {
+  padding: 0;
+  background: rgba(255,255,255,0);
+  font-family: lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+}
+
+
+h1, h2, h3 {
+  padding-left: 10px;
+  font-weight: 300;
+  clear: both;
+}
+
+ .album-title {
+  margin: 0px 0 20px;
+  color: #383838;
+  text-shadow: 1px 1px 1px #fff;
+  padding-left: 10px;
+  font-weight: 300;
+  clear: both;
+}
+.des-title {
+  margin: 0px 0 10px;
+  color: #666;
+  text-shadow: 1px 1px 1px #fff;
+  padding-left: 10px;
+  font-weight: 300;
+  clear: both;
+}
+.empty-title {
+  margin: 100px 10px;
+  text-align: center;
+  color: #666;
+  text-shadow: 1px 1px 1px #fff;
+}
+.empty-sub-title {
+  text-align: center;
+  color: #888;
+  text-shadow: 1px 1px 1px #fff;
+}
+.icon-unlocked {
+  margin-right: 5px;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+section.info {
+  background-color: #f8f8f8;
+}
+
+.exif-p {
+  width: 50%;
+  float: left;
+}
+.exif-p b {
+  margin-right: 10px;
+}
+
+.layout {
+  color: #333;
+  padding: 0 60px 60px 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.albums, .photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.thumb {
+  text-align: center;
+  list-style: none;
+  float: left;
+  width: 150px;
+  height: 120px;
+  margin: 10px;
+  padding: 8px 8px;
+  background: #fff;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.thumb:hover {
+  transform: scale(1.1);
+  transition: .3s;
+}
+.thumb:hover.thumb:before, .thumb:hover.thumb:after {
+  display: none;
+}
+.bg-lock {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  background: rgba(0,0,0,.5);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #fff;
+  font-size: 30px;
+}
+.hide{
+  width: 150px;
+  margin: 0 10px;
+  padding: 0 8px;
+  visibility: hidden;
+}
+
+.thumb:before {
+    -webkit-transform: skew(-15deg) rotate(-5deg);
+    -moz-transform: skew(-15deg) rotate(-5deg);
+    -o-transform: skew(-15deg) rotate(-5deg);
+    transform: skew(-15deg) rotate(-5deg);
+    left: 15px;
+}
+.thumb:after {
+    -webkit-transform: skew(15deg) rotate(5deg);
+    -moz-transform: skew(15deg) rotate(5deg);
+    -o-transform: skew(15deg) rotate(5deg);
+    transform: skew(15deg) rotate(5deg);
+    right: 15px;
+}
+.thumb:before, .thumb:after {
+    width: 88%;
+    height: 20%;
+    content: ' ';
+    -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 7px;
+    z-index: -1;
+}
+
+.thumb figcaption {
+  width: 100%;
+  line-height: 32px;
+  max-height: 32px;
+  overflow: hidden;
+  font-size: 14;
+  word-wrap: break-word;
+}
+
+.thumb img {
+  overflow: hidden;
+  margin: auto;
+  height: auto;
+  width: auto;
+  max-width: 150px;
+  max-height: 100px;
+}
+.img-wrap {
+  width: 150px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  border: none;
+  justify-content: center;
+}
+
+figure.photo {
+  margin: 10px;
+}
+
+figure.photo img {
+  max-width: 100%;
+}
+
+figure.photo figcaption {
+  padding-left: 10px;
+}
+
+section.info {
+  margin: 10px;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #C3C3C3;
+}
+
+section.info h2 {
+  padding: 5px 5px 10px 5px;
+  margin:0;
+}
+
+section.info table {
+  border-spacing: 0;
+}
+
+section.info table td {
+  padding: 5px;
+}
+
+section.info table td:first-child {
+  font-weight: bold;
+  padding-right: 20px;
+}
+
+@media screen and (max-width:600px) {
+  .layout {
+    padding: 10px;
+  }
+  .thumb {
+    margin: 10px 0;
+  }
+  .album-title {
+    margin: 50px 0 0;
+    padding: 0;
+  }
+  .album-title-top {
+    padding: 0;
+  }
+  .des-title {
+    padding: 0;
+  }
+}
+@media screen and (max-width:350px) {
+  .albums, .photos {
+    justify-content: center;
+  }
+}
